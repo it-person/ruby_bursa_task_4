@@ -13,6 +13,9 @@ module Library
         self.class_variable_set :@@group_identifier, self.class_variable_get(:@@group_identifier) + 1
       end
 
+      def group_identifier
+      	self.class_variable_get(:@@group_identifier)
+      end
     end
 
     module Initializer
