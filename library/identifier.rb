@@ -20,8 +20,8 @@ module Library
 
     module Initializer
       def initialize *args
-        @identifier = self.class.inc_ident_or_init
         super *args
+        @identifier = self.class.inc_ident_or_init
       end
     end
 
@@ -30,11 +30,11 @@ module Library
     end
 
     def eql? other
-    	@identifier == other.identifier
+    	(self.class == other.class)&&(@identifier == other.identifier)
     end
 		
     def == other
-    	@identifier == other.identifier
+    	(self.class == other.class)&&(@identifier == other.identifier)
     end
 	end
 end
