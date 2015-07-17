@@ -1,4 +1,6 @@
 class Library::PublishedBook < Library::Book
+  include Library::Identifier
+
   attr_accessor :price, :pages_quantity, :published_at
 
   def initialize author, title, price, pages_quantity, published_at
